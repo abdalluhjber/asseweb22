@@ -1,6 +1,5 @@
 const { Author, Book } = require('../models');
 
-// Create an Author
 exports.createAuthor = async (req, res) => {
   try {
     const author = await Author.create(req.body);
@@ -10,7 +9,6 @@ exports.createAuthor = async (req, res) => {
   }
 };
 
-// Get all Authors
 exports.getAllAuthors = async (req, res) => {
   try {
     const authors = await Author.findAll({
@@ -22,7 +20,6 @@ exports.getAllAuthors = async (req, res) => {
   }
 };
 
-// Get a single Author by ID
 exports.getAuthorById = async (req, res) => {
   try {
     const author = await Author.findByPk(req.params.id, {
@@ -38,7 +35,6 @@ exports.getAuthorById = async (req, res) => {
   }
 };
 
-// Update an Author
 exports.updateAuthor = async (req, res) => {
   try {
     const [updated] = await Author.update(req.body, {
@@ -55,7 +51,6 @@ exports.updateAuthor = async (req, res) => {
   }
 };
 
-// Delete an Author
 exports.deleteAuthor = async (req, res) => {
   try {
     const deleted = await Author.destroy({
